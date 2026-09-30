@@ -1,4 +1,5 @@
 using PrototipoREPL.Contracts;
+using Spectre.Console;
 
 namespace PrototipoREPL.Engine.Commands;
 
@@ -9,12 +10,22 @@ public class HelpCommand(CommandRegistry registry) : ICommand
 
     public Task ExecuteAsync(string[] ars)
     {
+        var table = new Table()
+            .Border(TableBorder.Rounded)
+            .BorderColor(Color.Grey)
+            .AddColumn("[bold cyan]Comando[/]")
+            .AddColumn("[bold white]Descrição[/]");
+
         Console.WriteLine("\nComandos disponíveis:");
         foreach (var cmd in registry.GetAll())
         {
-            Console.WriteLine($"  {cmd.Name,-12} - {cmd.Description}");
+            table.AddRow(
+               $"[green]{cmd.Name}[/]",
+               cmd.Description
+           );
         }
-        Console.WriteLine();
+        AnsiConsole.WriteLine();
+        AnsiConsole.Write(table);
         return Task.CompletedTask;
     }
 }

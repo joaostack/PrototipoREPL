@@ -1,6 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <ItemGroup>
+      <PackageReference Include="Spectre.Console" Version="0.57.2" />
+    </ItemGroup>
+
+    <ItemGroup>
       <ProjectReference Include="..\PrototipoREPL.Contracts\PrototipoREPL.Contracts.csproj" />
     </ItemGroup>
 

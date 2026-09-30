@@ -101,4 +101,4 @@ Uma vez iniciado, você verá o prompt interativo:
 
 ---
 
-*Esta documentação foi gerada pelo modelo de IA Gemini Flash 3.8.*
+*Esta documentação foi gerada pelo modelo de IA Gemini.*
